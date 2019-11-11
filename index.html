@@ -5,12 +5,12 @@ function doajax(){
     ajax1.onreadystatechange=function(){
         if(ajax1.readyState==4 && ajax1.status==200){
             var repl=document.getElementById('myplace');
-            repl.innerHTML=ajax1.responseText;
+            repl.innerHTML=ajax1.responseText.name;
         }else{
             return false;
         }
     }
-    ajax1.open("GET","data2.txt",true);
+    ajax1.open("GET","data.txt",true);
     ajax1.send(null);
 }
 </script>
