@@ -5,7 +5,8 @@ function doajax(){
     ajax1.onreadystatechange=function(){
         if(ajax1.readyState==4 && ajax1.status==200){
             var repl=document.getElementById('myplace');
-            repl.innerHTML=ajax1.responseText.name;
+            repl.innerHTML=ajax1.responseText;
+			console.log(ajax1.responseText);
         }else{
             return false;
         }
