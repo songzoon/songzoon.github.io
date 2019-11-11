@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World 123 </h1>
-<p>I'm hosted with GitHub Pages.</p>
-
-
-<h2>JavaScript Arrays</h2>
-
-<p id="demo"></p>
-
-<script>
-var cars = ["Saab", "Volvo", "BMW"];
-document.getElementById("demo").innerHTML = cars;
+<script language="javascript" src="ajax.ja"></script>
+<script language="javascript">
+function doajax(){
+    var ajax1=createAjax(); 
+    ajax1.onreadystatechange=function(){
+        if(ajax1.readyState==4 && ajax1.status==200){
+            var repl=document.getElementById('myplace');
+            repl.innerHTML=ajax1.responseText;
+        }else{
+            return false;
+        }
+    }
+    ajax1.open("GET","data.txt",true);
+    ajax1.send(null);
+}
 </script>
-
-</body>
-</html>
+<input type="button" name="Button" value="do ajax" onclick="doajax()" />
+<div id="myplace">
+ 
+</div>
