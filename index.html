@@ -6,7 +6,9 @@ function doajax(){
         if(ajax1.readyState==4 && ajax1.status==200){
             var repl=document.getElementById('myplace');
             repl.innerHTML=ajax1.responseText;
-			console.log(ajax1.responseText);
+			
+			var obj = JSON.parse(ajax1.responseText);
+			console.log(obj.name);
         }else{
             return false;
         }
